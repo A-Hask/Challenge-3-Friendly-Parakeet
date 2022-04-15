@@ -1,4 +1,9 @@
 // Assignment code here
+//Array of all possible characters
+var upperCase= ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", ",Z"];
+var lowerCase= [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var numericCharacters= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var specialCharacters= [" ", "!", "#", "$", "%", "^", "&", "*", "+", "<", ">", "?", "_"];
 
 var passwordCriteria = function () {
   // Ask user how many characters they would like their password to have
@@ -22,14 +27,14 @@ var passwordCriteria = function () {
   before returning to the start of the function*/
   var caseSensitivity = window.prompt("Would you like a case sensitive password? (Enter 'Y' for Yes or 'N' for No)");
   caseSensitivity.toLowerCase();
-  // if (y) {
-  
-  // }
-  // else if (n) {
+  if (y) function upperCase() {
+    
+  }
+  else if (n) function lowerCase () {
 
-  // } else {
-  //   window.prompt ("Please enter Y or N.");
-  // }
+  } else {
+    window.prompt ("Please enter Y or N.");
+  }
   console.log(caseSensitivity);
 
   // Ask user if they would like their password to have special characters
@@ -68,7 +73,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword()
+  var password = generatePassword();
   console.log(password);
   var passwordText = document.querySelector("#password");
 
