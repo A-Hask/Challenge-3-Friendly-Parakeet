@@ -1,9 +1,9 @@
 // Assignment code here
 //Array of all possible characters
-var upperCase= ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", ",Z"];
+var upperCase= ["A","B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 var lowerCase= [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var numericCharacters= [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-var specialCharacters= [" ", "!", "#", "$", "%", "^", "&", "*", "+", "<", ">", "?", "_"];
+var specialCharacters= ["!", "#", "$", "%", "^", "&", "*", "+", "<", ">", "?", "_", "@"];
 
 var passwordCriteria = function () {
   // Ask user how many characters they would like their password to have
@@ -22,50 +22,53 @@ var passwordCriteria = function () {
   console.log(numberOfCharacters);
 
   // Ask user if they would like their password to be case sensitive
-  /*User must enter Y, y, N, or n.
-  Otherwise, window will prompt the user to choose again
-  before returning to the start of the function*/
-  var caseSensitivity = window.prompt("Would you like a case sensitive password? (Enter 'Y' for Yes or 'N' for No)");
-  caseSensitivity.toLowerCase();
-  if (y) function upperCase() {
-    
-  }
-  else if (n) function lowerCase () {
+  var upperCaseBoolean = window.confirm("Would you like to use uppercase characters? Press 'ok' for yes and 'cancel' for no.");  
+  console.log(upperCaseBoolean);
 
-  } else {
-    window.prompt ("Please enter Y or N.");
-  }
-  console.log(caseSensitivity);
+  var lowerCaseBoolean = window.confirm("Would you like to use lowercase characters? Press 'ok' for yes and 'cancel' for no.");  
+  console.log(lowerCaseBoolean);
 
   // Ask user if they would like their password to have special characters
-  var specialCharacters = window.prompt("Include special characters? (Enter 'Y' for Yes or 'N' for No)");
-  specialCharacters.toLowerCase();
-  // if (y) {
-  
-  // }
-  // else if (n) {
-
-  // } else {
-  //   window.prompt ("Please enter Y or N.");
-  // }
-
-  console.log(specialCharacters);
+  var specialCharactersBoolean = window.confirm("Include special characters? Press 'ok' for yes and 'cancel' for no.");
+  console.log(specialCharactersBoolean);
 
   // Ask user if they would like numeric characters
-  var numericCharacters = window.prompt("Would you like your password to include numeric characters? (Enter 'Y' for Yes or 'N' for No)");
-  numericCharacters.toLowerCase();
-  // if (y) {
-  
-  // }
-  // else if (n) {
+  var numericCharactersBoolean = window.confirm("Would you like your password to include numeric characters? Press 'ok' for yes and 'cancel' for no.");
+  console.log(numericCharactersBoolean);
 
-  // } else {
-  //   window.prompt ("Please enter Y or N.");
-  // }
+  var passwordText = document.querySelector("#password");
 
-  console.log(numericCharacters);
+  var generatedPassword = "";
+
+  //Create an array of the character types that the user selected
+  var charArray = []
+  var ch 
+  if (upperCaseBoolean === true) {
+    ch = upperCase[Math.floor(Math.random() * 26)]
+    charArray.push(ch); 
+  }
+  if (lowerCaseBoolean == true) {
+    ch = lowerCase[Math.floor(Math.random() * 26)]
+    charArray.push(ch);
+  }
+  if (numericCharactersBoolean == true) {
+    ch = numericCharacters[Math.floor(Math.random() * 10)]
+    charArray.push(ch);
+  }
+  if (specialCharactersBoolean == true) {
+    ch = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+    charArray.push(ch);
+  }
+
+  //use the created character array to choose characters from those type lists
+
+  // for (var i = charArray.length; i < numberOfCharacters; i++) {
+    
+  // }
+  while (charArray.length < numberOfCharacters) {
+  }
 }
-passwordCriteria();
+
 
 
 // Get references to the #generate element
@@ -75,11 +78,10 @@ var generateBtn = document.querySelector("#generate");
 function writePassword() {
   var password = generatePassword();
   console.log(password);
-  var passwordText = document.querySelector("#password");
-
+  
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", passwordCriteria);
 
