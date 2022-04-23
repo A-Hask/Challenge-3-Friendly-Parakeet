@@ -79,9 +79,10 @@ function writePassword() {
   // if 
 }
 
+function generatePassword () {
 for (var i = charArray.length; i < length; i++) {
     charArray.getItem ();
-
+  }
 }
 
 
