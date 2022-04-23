@@ -48,42 +48,53 @@ var passwordCriteria = function () {
 
   // Window alert to tell the user to choose at least one type of character for their password
   if (specialCharactersBoolean === false && upperCaseBoolean === false && lowerCaseBoolean === false && numericCharactersBoolean === false) {
-    window.alert("You must choose at least one criteria!");
+    window.alert("Oops! You can't make a passwork with no characters! Please choose at least one criteria.");
     passwordCriteria();
   }
   return options;
 }
-
+ 
+//concat the character arrays chosen by the user
 var charArray = [].concat(upperCase, lowerCase, specialCharacters, numericCharacters);
-// if (upperCaseBoolean === true) {
-//   ch = upperCase[Math.floor(Math.random() * 26)]
-//   charArray.push(options); 
-// }
-// if (lowerCaseBoolean == true) {
-  //   ch = lowerCase[Math.floor(Math.random() * 26)]
-  //   charArray.push(options);
-  // }
-// if (numericCharactersBoolean == true) {
-  //   ch = numericCharacters[Math.floor(Math.random() * 10)]
-  //   charArray.push(options);
-  // }
-  // if (specialCharactersBoolean == true) {
-    //   ch = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-//   charArray.push(options);
-// }
 
+//create a function to choose one character of each chosen type
+function writePassword() {
+  if (upperCaseBoolean === true) {
+    ch = upperCase[Math.floor(Math.random() * 26)]
+    charArray.push(); 
+  }
+  if (lowerCaseBoolean == true) {
+    ch = lowerCase[Math.floor(Math.random() * 26)]
+    charArray.push();
+  }
+  if (numericCharactersBoolean == true) {
+    ch = numericCharacters[Math.floor(Math.random() * 10)]
+    charArray.push();
+  }
+  if (specialCharactersBoolean == true) {
+    ch = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
+    charArray.push();
+  }
+  console.log(charArray.join());
+  // if 
+}
+
+for (var i = charArray.length; i < length; i++) {
+    charArray.getItem ();
+
+}
+
+
+
+var generatedPassword = "";
 var generateBtn = document.querySelector("#generate");
 
 
 
 
 
-//   for (var i = charArray.length; i < numberOfCharacters; i++) {
-
-// }
   // var passwordText = document.querySelector("#password");
 
-  // var generatedPassword = "";
 
   //Create an array of the character types that the user selected
   // var charArray = []
@@ -91,7 +102,6 @@ var generateBtn = document.querySelector("#generate");
 
   //use the created character array to choose characters from those type lists
 
-// function (writePassword) {
   // while (charArray.length < numberOfCharacters) {
   //     upperCase.getItem;
   //     lowerCase.getItem;
@@ -114,4 +124,3 @@ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", passwordCriteria);
-
