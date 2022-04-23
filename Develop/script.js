@@ -75,17 +75,28 @@ function writePassword() {
     ch = specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
     charArray.push();
   }
-  console.log(charArray.join());
-  // if 
+
 }
 
-function generatePassword () {
-for (var i = charArray.length; i < length; i++) {
-    charArray.getItem ();
-  }
-}
+// function generatePassword () {
+// for (var i = charArray.length; i < length; i++) {
+//     charArray.getItem ();
+//   }
+// }
 
-
+// function generatePassword (charArray, last = undefined) {
+//   if (charArray.length === 0) {
+//     return null;
+//   } else if (charArray.length === 1) {
+//     return charArray[0];
+//     let num = 0;
+//     do {
+//       num = Math.floor(Math.random()*charArray.length);
+//     } while (charArray[num] === last);
+//     return charArray[num];
+//     }
+//   }
+// }
 
 var generatedPassword = "";
 var generateBtn = document.querySelector("#generate");
@@ -125,3 +136,8 @@ var generateBtn = document.querySelector("#generate");
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", passwordCriteria);
+
+Array.prototype.charArray = function generatedPassword() {
+  return charArray[Math.floor(math.random()*charArray.length)];
+}
+function generatedPassword();
