@@ -100,12 +100,7 @@ function writePassword() {
 
 var generatedPassword = "";
 var generateBtn = document.querySelector("#generate");
-
-
-
-
-
-  // var passwordText = document.querySelector("#password");
+var passwordText = document.querySelector("#password");
 
 
   //Create an array of the character types that the user selected
@@ -127,12 +122,12 @@ var generateBtn = document.querySelector("#generate");
 // Get references to the #generate element
 
 // Write password to the #password input
-// function writePassword();
-//   var password = generatePassword();
-//   console.log(password);
+function writePassword();
+  var password = generatedPassword();
+  console.log(password);
   
-//   passwordText.value = password;
-// }
+  passwordText.value = password;
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", passwordCriteria);
